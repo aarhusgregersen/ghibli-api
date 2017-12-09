@@ -36,6 +36,16 @@ p {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  transition: all 0.5s linear;
+}
+
+a:hover {
+  zoom: 1.15;
+  transform: scale(1.1);
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;

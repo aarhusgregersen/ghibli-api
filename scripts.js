@@ -33,11 +33,15 @@ request.onload = function() {
       movie.description = movie.description.substring(0, 300); // Limit to 300 chars
       p.textContent = `${movie.description}...`; // End with an ellipses
 
+      const a = document.createElement('a');
+      a.setAttribute('href', $base_url+'/films/'+movie.id);
+
       // Append the cards to the container element
       container.appendChild(card);
 
       // Each card will contain an h1 and a p
-      card.appendChild(h1);
+      card.appendChild(a);
+      a.appendChild(h1);
       card.appendChild(p);
     });
   } else {
