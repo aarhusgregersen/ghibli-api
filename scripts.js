@@ -3,10 +3,13 @@
 const app   = document.getElementById('root');
 const logo  = document.createElement('img');
 logo.src    = 'logo.png';
+const loading = document.createElement('img');
+loading.src   = 'loading.gif';
 const container = document.createElement('div');
 container.setAttribute('class', 'container');
 
 app.appendChild(logo); // Adds logo to app root
+app.appendChild(loading);
 app.appendChild(container); //A Adds container div to app root
 
 var request = new XMLHttpRequest();
@@ -19,6 +22,7 @@ request.onload = function() {
   var data = JSON.parse(this.response);
 
   if (request.status >= 200 && request.status < 400) {
+    loading.remove();
     data.forEach(movie => {
       // Create a div with a card class
       const card = document.createElement('div');
